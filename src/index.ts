@@ -7,11 +7,11 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-console.log(process.env.VERCEL_PRODUCTION_URL);
+console.log(process.env.VERCEL_PROJECT_PRODUCTION_URL);
 
 // Home route - HTML
 app.get("/", (req, res) => {
-  console.log(process.env.VERCEL_PRODUCTION_URL);
+  console.log(process.env.VERCEL_PROJECT_PRODUCTION_URL);
 
   res.type("html").send(`
     <!doctype html>
@@ -42,9 +42,9 @@ app.get("/about", function (req, res) {
 
 // Example API endpoint - JSON
 app.get("/api-data", (req, res) => {
-  console.log(process.env.VERCEL_PRODUCTION_URL);
+  console.log(process.env.VERCEL_PROJECT_PRODUCTION_URL);
   res.json({
-    message: "env = " + process.env.VERCEL_PRODUCTION_URL,
+    message: "env = " + process.env.VERCEL_PROJECT_PRODUCTION_URL,
     items: ["apple", "banana", "cherry"],
   });
 });
