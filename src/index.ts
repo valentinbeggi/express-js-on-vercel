@@ -7,8 +7,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+console.log(process.env.VERCEL_HOST);
+
 // Home route - HTML
 app.get("/", (req, res) => {
+  console.log(process.env.VERCEL_HOST);
+
   res.type("html").send(`
     <!doctype html>
     <html>
