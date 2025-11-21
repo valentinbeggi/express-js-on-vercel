@@ -44,7 +44,7 @@ app.get("/about", function (req, res) {
 app.get("/api-data", (req, res) => {
   console.log(process.env.VERCEL_HOST);
   res.json({
-    message: "Here is some sample API data",
+    message: "env = " + process.env.VERCEL_HOST,
     items: ["apple", "banana", "cherry"],
   });
 });
